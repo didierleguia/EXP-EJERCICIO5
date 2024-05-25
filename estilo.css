@@ -1,0 +1,29 @@
+main{
+   border: 1px solid #00aeef; 
+   width: 85%;
+   margin: 30px;
+   padding: 10px;
+   background-color: bisque;
+}
+
+h1{
+    text-align: center;
+    color: #00aeef;
+    font-size: 1.5em;
+    
+}
+
+#caso{
+    text-align: center;
+}
+
+#solucion{
+    height: 200px;
+    border: solid 1px #00aeef;
+    width: 75%;
+    margin: auto;
+    background-color: aliceblue;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 1</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+
+<body>
+    
+<main>
+
+    <header>
+        <img src="img/logo-amarillo2.png" alt="logo" height="70px">
+    </header>
+    <h1>5.	Calcular un programa que permita calcular los importes y pago total de los servicios a sus clientes. </h1>
+    <div id="solucion">
+
+        <script>
+            //Declaracion de variables//
+            var pqturistico,cntpersonas,mediodepago,preColca,preCusco,preMancora,preOtroDestino,Mntfinal
+
+            //Fase de lectura / estructura//
+            pqturistico = prompt("Ingrese el paquete turístico escogido (Colca, Cusco, Máncora u otro destino):");
+            cntpersonas = parseInt(prompt("Ingrese la cantidad de personas:"));
+            mediodepago = prompt("Ingrese la forma de pago (al contado, con tarjeta o transferencia):");
+
+            //Fase procesamientos de datos//
+            
+            preColca = 550;
+            preCusco = 700;
+            preMancora = 450;
+            preOtroDestino = 440;
+            cstSeguro = 140;
+            cstTraslados = 150;
+            impuestoPorcentaje = 0.02; 
+
+            let costo;
+           switch (pqturistico.toLowerCase()) {
+            case "colca":
+                costo = preColca;
+                break;
+            case "cusco":
+                costo = preCusco;
+                break;
+            case "máncora":
+                costo = preMancora;
+                break;
+            default:
+                costo = preOtroDestino;
+
+            }
+
+            cstTotal = costo + (cstSeguro*cntpersonas) + (cstTraslados*cntpersonas);
+            impuesto = cstTotal * impuestoPorcentaje;
+
+            if (mediodepago .toLowerCase() === "al contado") {
+                cstTotal -= cstTotal * 0.10;
+            } else {
+                if (mediodepago .toLowerCase() === "con tarjeta") {
+                    cstTotal -= cstTotal * 0.05;
+                }
+            }
+
+            Mntfinal = cstTotal + impuesto;
+          
+            //Fase de salida//
+            document.write("=====SERVICIOS A SUS CLIENTES====="+"<br>");
+            document.write("Paquete turistico escogido:"  +pqturistico+"<br>");
+            document.write("Cantidad de personas:"  +cntpersonas+"<br>");
+            document.write("Forma de pago:"  +mediodepago +"<br>");
+            document.write("Costo total:"  +cstTotal+"<br>");
+            document.write("Impuesto:"  +impuesto+"<br>");
+            document.write("Monto final:"  +Mntfinal);
+        
+        </script>
+    </div>
+   
+</main>
+
+
+</body>
+</html>
